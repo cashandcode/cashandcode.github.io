@@ -19,7 +19,7 @@ export function App() {
 			</div>
 			<div className="flex">
 				<div className="l1">
-					<h1>Good websites, <br /> right in your hands.</h1>
+					<h1>Good websites, right in your hands.</h1>
 				</div>
 				<div className="l2">
 					<div className="terminal">
