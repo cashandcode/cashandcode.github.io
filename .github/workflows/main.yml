@@ -16,10 +16,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  deploy:1
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -45,5 +42,6 @@ jobs:
       - name: Deploy directly to Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
 
 
