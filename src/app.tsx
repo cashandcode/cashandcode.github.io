@@ -9,6 +9,9 @@ export function App() {
 					<img src={company_logo} alt="CashAndCode Logo" />
 				</div>
 				<div className="split">
+					Cash and Code
+				</div>
+				<div className="split">
 					<a href="#home">Home</a>
 					<a href="#websites">Websites</a>
 					<a href="#contact">Contact us</a>
