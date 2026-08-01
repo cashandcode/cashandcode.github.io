@@ -9,7 +9,7 @@ export function App() {
 					<img src={company_logo} alt="CashAndCode Logo" />
 				</div>
 				<div className="split">
-					Cash and Code
+					<p className={"weblogo"}>{"Cash and Code"}</p>
 				</div>
 				<div className="split">
 					<a href="#home">Home</a>
@@ -19,7 +19,7 @@ export function App() {
 			</div>
 			<div className="flex">
 				<div className="l1">
-					<h1>Good websites, right in your hands.</h1>
+					<span>Good websites,<br /> right in your hands.</span>
 				</div>
 				<div className="l2">
 					<div className="terminal">
@@ -34,6 +34,24 @@ export function App() {
 				</div>
 			</div>
 			<h1>{"Our Website Examples"}</h1>
+			<div className="webExmples">
+				<div className="web1 exampleWebsite">
+					<h1 className="name">AstroGen</h1>
+					<p className="description">An API Key provider for ai models.</p>
+				</div>
+				<div className="flex">
+					<div className="web2 exampleWebsite">
+						<h1 className="name">FruityChirps</h1>
+						<p className="description">A cross-country fruit provider for juices etc.</p>
+					</div>
+					<div className="web3 exampleWebsite">
+						<h1 className="name">PixelBloom</h1>
+						<p className="description">A design studio portifolio for making polished digital logos.</p>
+					</div>
+				</div>
+				
+				
+			</div>
 		</div>
 	)
 }
