@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sugar & Bloom | Handcrafted Cakes & Pastries</title>
+<meta name="description" content="Sugar & Bloom — handcrafted cakes, pastries, and specialty coffee made fresh every morning. Order online or visit our café.">
+<meta name="theme-color" content="#fbf5ec">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,500;1,600&family=Petit+Formal+Script&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  :root{
+    --blush:#e8c4c0; --blush-deep:#dba9a4; --cream:#fbf5ec; --cream-deep:#f3e8d8;
+    --plum:#5b3a4a; --plum-deep:#402734; --sage:#a3ab86; --gold:#c9a24b;
+    --font-display:'Cormorant Garamond',serif; --font-script:'Petit Formal Script',cursive; --font-body:'Jost',sans-serif;
+    --max:1140px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;scroll-padding-top:88px;}
+  body{background:var(--cream);color:var(--plum);font-family:var(--font-body);line-height:1.65;-webkit-font-smoothing:antialiased;font-weight:400;}
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;}
+  input,textarea{font-family:inherit;}
+  ::selection{background:var(--blush-deep);color:var(--plum-deep);}
+  :focus-visible{outline:2px solid var(--plum);outline-offset:3px;}
+  .container{max-width:var(--max);margin:0 auto;padding:0 24px;}
+  h1,h2,h3{font-family:var(--font-display);font-weight:600;line-height:1.18;}
+  section{padding:110px 0;}
+  .script{font-family:var(--font-script);font-weight:400;}
+  .eyebrow{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:14px;display:block;}
+  .section-head{max-width:560px;margin:0 auto 46px;text-align:center;}
+  .section-head h2{font-size:clamp(30px,4.2vw,44px);font-style:italic;}
+  .section-head p{color:#7a5f6a;margin-top:14px;font-size:16px;}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;border-radius:100px;font-weight:600;font-size:14.5px;transition:.25s;}
+  .btn-primary{background:var(--plum);color:var(--cream);}
+  .btn-primary:hover{background:var(--plum-deep);transform:translateY(-2px);}
+  .btn-outline{border:1.5px solid var(--plum);color:var(--plum);}
+  .btn-outline:hover{background:var(--plum);color:var(--cream);}
+
+  .sprig{color:var(--sage);display:block;margin:0 auto;}
+  .sprig-divider{display:flex;justify-content:center;margin:0 0 40px;}
+
+  .cc-back{position:fixed;top:16px;left:16px;z-index:300;background:rgba(10,10,10,0.82);color:#fff;font-size:12px;font-weight:600;padding:9px 16px 9px 14px;border-radius:100px;display:inline-flex;align-items:center;gap:7px;border:1px solid rgba(255,255,255,0.15);backdrop-filter:blur(6px);transition:.2s;}
+  .cc-back:hover{transform:translateY(-2px);background:rgba(10,10,10,.95);}
+  .cc-back i{font-size:11px;}
+
+  /* NAV */
+  .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:22px 0;background:rgba(251,245,236,0.0);transition:.3s;}
+  .nav.scrolled{background:rgba(251,245,236,0.94);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(91,58,74,.08);padding:15px 0;}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;}
+  .brand{font-family:var(--font-display);font-style:italic;font-weight:600;font-size:26px;color:var(--plum);}
+  .nav-links{display:flex;align-items:center;gap:32px;}
+  .nav-links a:not(.btn){font-size:14.5px;color:#7a5f6a;}
+  .nav-links a:not(.btn):hover{color:var(--plum);}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;width:24px;}
+  .nav-toggle span{height:2px;background:var(--plum);}
+  .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav-toggle.open span:nth-child(2){opacity:0;}
+  .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+  /* HERO */
+  .hero{padding:190px 0 100px;text-align:center;background:linear-gradient(180deg,var(--blush) 0%, var(--cream) 78%);position:relative;}
+  .hero .script{font-size:clamp(22px,3vw,30px);color:var(--gold);display:block;margin-bottom:6px;}
+  .hero h1{font-size:clamp(42px,6.2vw,68px);font-style:italic;margin-bottom:22px;color:var(--plum-deep);}
+  .hero p{font-size:17px;color:#7a5f6a;max-width:460px;margin:0 auto 36px;}
+  .hero-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:20px;}
+
+  /* MENU */
+  .menu-tabs-head{text-align:center;}
+  .menu-cat{max-width:680px;margin:0 auto 60px;}
+  .menu-cat h3{text-align:center;font-size:26px;font-style:italic;color:var(--gold);margin-bottom:8px;}
+  .menu-items{margin-top:26px;}
+  .menu-item{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:16px 0;border-bottom:1px solid var(--cream-deep);}
+  .menu-item-left h4{font-family:var(--font-display);font-weight:600;font-size:19px;}
+  .menu-item-left p{font-size:13.5px;color:#8a7078;margin-top:3px;}
+  .menu-item-price{font-family:var(--font-display);font-weight:600;font-size:18px;color:var(--plum);white-space:nowrap;}
+
+  /* CUSTOM CAKE CTA */
+  .custom-cake{background:var(--plum);color:var(--cream);border-radius:24px;padding:64px;text-align:center;}
+  .custom-cake .sprig{color:var(--blush);}
+  .custom-cake h2{font-size:clamp(28px,3.8vw,40px);font-style:italic;margin-bottom:16px;}
+  .custom-cake p{max-width:480px;margin:0 auto 30px;color:var(--blush);opacity:.95;}
+
+  /* STORY */
+  .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+  .story-grid p{color:#7a5f6a;margin-top:16px;font-size:16px;}
+  .story-visual{aspect-ratio:1;border-radius:50%;background:linear-gradient(150deg,var(--blush),var(--cream-deep));display:flex;align-items:center;justify-content:center;}
+  .story-visual i{font-size:100px;color:var(--gold);opacity:.85;}
+
+  /* GALLERY */
+  .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .gallery-tile{aspect-ratio:1;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--plum-deep);}
+  .gallery-tile i{font-size:26px;}
+  .gallery-tile span{font-family:var(--font-display);font-style:italic;font-size:13.5px;}
+
+  /* TESTIMONIALS */
+  .test-row{display:grid;grid-template-columns:1fr 1fr;gap:26px;max-width:880px;margin:0 auto;}
+  .test-card{background:var(--cream-deep);padding:32px;border-radius:16px;}
+  .test-card p{font-family:var(--font-display);font-style:italic;font-size:18.5px;margin-bottom:14px;color:var(--plum-deep);}
+  .test-card span{font-size:13px;color:#8a7078;text-transform:uppercase;letter-spacing:.05em;}
+
+  /* NEWSLETTER */
+  .newsletter{text-align:center;}
+  .newsletter h2{font-style:italic;font-size:clamp(26px,3.6vw,38px);}
+  .newsletter p{color:#7a5f6a;max-width:420px;margin:12px auto 26px;}
+  .newsletter-form{display:flex;max-width:420px;margin:0 auto;gap:10px;}
+  .newsletter-form input{flex:1;padding:14px 18px;border-radius:100px;border:1.5px solid var(--plum);font-size:14.5px;background:#fff;}
+  .newsletter-note{margin-top:14px;color:var(--gold);font-weight:600;font-size:13.5px;display:none;}
+  .newsletter-note.show{display:block;}
+
+  /* FOOTER */
+  footer{background:var(--plum-deep);color:var(--blush);padding:64px 0 24px;}
+  .footer-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:26px;padding-bottom:32px;border-bottom:1px solid rgba(232,196,192,.15);margin-bottom:26px;}
+  .footer-top .brand{color:var(--cream);}
+  .footer-hours{font-size:13.5px;}
+  .footer-hours div{margin-bottom:4px;}
+  .footer-social{display:flex;gap:12px;}
+  .footer-social a{width:36px;height:36px;border:1px solid rgba(232,196,192,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:.2s;}
+  .footer-social a:hover{border-color:var(--gold);color:var(--gold);}
+  .footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12.5px;color:#c9a9ac;}
+  .footer-bottom a{color:var(--gold);}
+
+  @media(max-width:900px){
+    .story-grid{grid-template-columns:1fr;gap:36px;}
+    .gallery-grid{grid-template-columns:repeat(2,1fr);}
+    .test-row{grid-template-columns:1fr;}
+  }
+  @media(max-width:768px){
+    .nav-links{position:fixed;inset:0 0 0 28%;top:0;background:var(--cream);flex-direction:column;align-items:flex-start;padding:100px 26px 30px;gap:24px;transform:translateX(100%);transition:.35s;}
+    .nav-links.open{transform:translateX(0);}
+    .nav-toggle{display:flex;}
+    section{padding:76px 0;}
+    .custom-cake{padding:44px 26px;}
+    .newsletter-form{flex-direction:column;}
+    .footer-top{flex-direction:column;}
+  }
+</style>
+</head>
+<body>
+
+<a href="index.html" class="cc-back"><i class="fa-solid fa-arrow-left"></i>Cash & Code</a>
+
+<header class="nav" id="siteNav">
+  <div class="container nav-inner">
+    <a href="#top" class="brand">Sugar & Bloom</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#menu">Menu</a>
+      <a href="#story">Our Story</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact" class="btn btn-primary">Order Online</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="container">
+      <span class="script">a little joy, baked fresh</span>
+      <h1>Sweeten Your Day</h1>
+      <p>Handcrafted cakes, pastries, and specialty coffee made fresh every morning — because life's better with a little sugar.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">Order Online</a>
+        <a href="#menu" class="btn btn-outline">View Menu</a>
+      </div>
+      <div class="sprig-divider">
+        <svg class="sprig" width="180" height="36" viewBox="0 0 180 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 18 C 34 4, 46 4, 82 18" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M178 18 C 146 4, 134 4, 98 18" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M24 15 C 29 6, 36 6, 38 13" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/>
+          <path d="M142 15 C 137 6, 130 6, 128 13" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/>
+          <path d="M52 22 C 57 29, 64 29, 66 22" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/>
+          <path d="M114 22 C 109 29, 102 29, 100 22" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/>
+          <circle cx="90" cy="18" r="3.4" fill="currentColor"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">The Menu</span>
+        <h2>From Our Display Case</h2>
+        <p>Everything is baked in-house daily, in small batches.</p>
+      </div>
+
+      <div class="menu-cat">
+        <h3>Cakes</h3>
+        <div class="sprig-divider">
+          <svg class="sprig" width="120" height="26" viewBox="0 0 120 26" fill="none"><path d="M2 13 C 24 3, 30 3, 52 13" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M118 13 C 96 3, 90 3, 68 13" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><circle cx="60" cy="13" r="2.6" fill="currentColor"/></svg>
+        </div>
+        <div class="menu-items">
+          <div class="menu-item"><div class="menu-item-left"><h4>Classic Red Velvet</h4><p>Slice $6.50 · Whole 8" $42</p></div><div class="menu-item-price">$6.50</div></div>
+          <div class="menu-item"><div class="menu-item-left"><h4>Chocolate Salted Caramel</h4><p>Slice $6.75 · Whole 8" $44</p></div><div class="menu-item-price">$6.75</div></div>
+          <div class="menu-item"><div class="menu-item-left"><h4>Lemon Lavender</h4><p>Slice $6.50 · Whole 8" $42</p></div><div class="menu-item-price">$6.50</div></div>
+          <div class="menu-item"><div class="menu-item-left"><h4>Seasonal Fruit Tart</h4><p>Slice $6.25 · Whole 8" $40</p></div><div class="menu-item-price">$6.25</div></div>
+        </div>
+      </div>
+
+      <div class="menu-cat">
+        <h3>Pastries</h3>
+        <div class="sprig-divider">
+          <svg class="sprig" width="120" height="26" viewBox="0 0 120 26" fill="none"><path d="M2 13 C 24 3, 30 3, 52 13" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M118 13 C 96 3, 90 3, 68 13" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><circle cx="60" cy="13" r="2.6" fill="currentColor"/></svg>
+        </div>
+        <div class="menu-items">
+          <div class="menu-item"><div class="menu-item-left"><h4>Butter Croissant</h4></div><div class="menu-item-price">$3.75</div></div>
+          <div class="menu-item"><div class="menu-item-left"><h4>Almond Danish</h4></div><div class="menu-item-price">$4.25</div></div>
+          <div class="menu-item"><div class="menu-item-left"><h4>Cinnamon Roll</h4></div><div class="menu-item-price">$4.50</div></div>
+          <div class="menu-item"><div class="menu-item-left"><h4>Pistachio Éclair</h4></div><div class="menu-item-price">$4.75</div></div>
+        </div>
+      </div>
+
+      <div class="menu-cat">
+        <h3>Beverages</h3>
+        <div class="sprig-divider">
+          <svg class="sprig" width="120" height="26" viewBox="0 0 120 26" fill="none"><path d="M2 13 C 24 3, 30 3, 52 13" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M118 13 C 96 3, 90 3, 68 13" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><circle cx="60" cy="13" r="2.6" fill="currentColor"/></svg>
+        </div>
+        <div class="menu-items">
+          <div class="menu-item"><div class="menu-item-left"><h4>House Espresso</h4></div><div class="menu-item-price">$3.25</div></div>
+          <div class="menu-item"><div class="menu-item-left"><h4>Rose Latte</h4></div><div class="menu-item-price">$4.75</div></div>
+          <div class="menu-item"><div class="menu-item-left"><h4>Iced Matcha</h4></div><div class="menu-item-price">$4.50</div></div>
+          <div class="menu-item"><div class="menu-item-left"><h4>Hot Chocolate</h4><p>with house-made marshmallow</p></div><div class="menu-item-price">$4.00</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="custom-cake">
+        <svg class="sprig" width="160" height="32" viewBox="0 0 160 32" fill="none" style="margin-bottom:22px;"><path d="M2 16 C 30 3, 40 3, 70 16" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M158 16 C 130 3, 120 3, 90 16" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="80" cy="16" r="3.2" fill="currentColor"/></svg>
+        <h2>Celebrating Something Special?</h2>
+        <p>From birthdays to weddings, we design custom cakes tailored to your event — flavor, filling, and all.</p>
+        <a href="#contact" class="btn" style="background:var(--gold);color:var(--plum-deep);">Request a Custom Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="story">
+    <div class="container story-grid">
+      <div class="story-visual"><i class="fa-solid fa-seedling"></i></div>
+      <div>
+        <span class="eyebrow">Our Story</span>
+        <h2>From Our Kitchen<br>to Your Table</h2>
+        <p>Sugar & Bloom started as a tiny home-kitchen dream in 2019, baking birthday cakes for neighbors and friends. Today, every cake, cookie, and croissant is still made the same way — from scratch, with real butter, real fruit, and a lot of love.</p>
+        <p>We believe dessert isn't just food. It's a little moment of joy.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Gallery</span>
+        <h2>A Peek Inside</h2>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-tile" style="background:linear-gradient(150deg,var(--blush),var(--cream-deep));"><i class="fa-solid fa-cake-candles"></i><span>Custom Cakes</span></div>
+        <div class="gallery-tile" style="background:linear-gradient(150deg,var(--gold),#e8cf9a);"><i class="fa-solid fa-cookie"></i><span>Fresh Pastries</span></div>
+        <div class="gallery-tile" style="background:linear-gradient(150deg,var(--sage),#c7cdb2);"><i class="fa-solid fa-mug-saucer"></i><span>The Café</span></div>
+        <div class="gallery-tile" style="background:linear-gradient(150deg,var(--plum),var(--blush-deep));"><i class="fa-solid fa-gift"></i><span>Gift Boxes</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Sweet Words</span>
+        <h2>What Our Guests Say</h2>
+      </div>
+      <div class="test-row">
+        <div class="test-card">
+          <p>"The best red velvet cake I've ever had, no contest."</p>
+          <span>— Amanda F.</span>
+        </div>
+        <div class="test-card">
+          <p>"Ordered a custom cake for my daughter's birthday and it was even better than the photos I sent as inspiration."</p>
+          <span>— Rachel P.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="newsletter">
+    <div class="container">
+      <h2>Get Sweet Deals & New Flavor Drops</h2>
+      <p>Join our list for seasonal menus, custom-cake inspiration, and first access to limited drops.</p>
+      <form class="newsletter-form" id="newsForm">
+        <input type="email" required placeholder="you@email.com">
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+      </form>
+      <p class="newsletter-note" id="newsNote">You're on the list — sweet things coming your way!</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <a href="#top" class="brand">Sugar & Bloom</a>
+      <div class="footer-hours">
+        <div><strong>Hours</strong></div>
+        <div>Tue–Sun: 7:30am – 6pm</div>
+        <div>Closed Mondays</div>
+      </div>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+        <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Sugar & Bloom. All rights reserved.</span>
+      <span>Case study designed & developed by <a href="index.html">Cash & Code</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('siteNav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 20));
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => { navLinks.classList.toggle('open'); navToggle.classList.toggle('open'); });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { navLinks.classList.remove('open'); navToggle.classList.remove('open'); }));
+  const newsForm = document.getElementById('newsForm');
+  const newsNote = document.getElementById('newsNote');
+  newsForm.addEventListener('submit', (e) => { e.preventDefault(); newsNote.classList.add('show'); newsForm.reset(); });
+</script>
+</body>
+</html>
