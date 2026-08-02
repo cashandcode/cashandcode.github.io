@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 body {
-    background-color: #122213;
+    background-color: #000000;
 }
 * {
     font-family: 'Inter', sans-serif;
@@ -68,7 +68,7 @@ h1 {
     margin: 14px;
     align-items: center;
     justify-content: space-evenly;
-    background-color: #1B5E20;
+    background-color: #1b5e1f48;
     border-radius: 10px;
 }
 .navbar .split {
@@ -107,17 +107,17 @@ a:hover::after {
     left: 0;
     border-bottom: 3px solid darkslategray;
 }
-.split .l1 h1 {
+.flex .l1 h1 {
     color: white;
 }
-.split .l1, .split .l2 {
+.flex .l1, .flex .l2 {
     padding: 13px;
 }
 /* Terminal Styling */
 
 .terminal .titlebar {
     display: flex;
-    width: 100%;
+    /* width: 100%; */
     align-items: center;
     background-color: rgb(32, 32, 32);
     padding: 10px;
