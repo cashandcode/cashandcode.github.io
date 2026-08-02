@@ -66,6 +66,7 @@ h1 {
 .App .navbar {
     display: flex;
     margin: 14px;
+    box-shadow: #707070 12px 12px 0px 0px;
     align-items: center;
     justify-content: space-evenly;
     background-color: #1b5e1f48;
@@ -117,6 +118,7 @@ a:hover::after {
 
 .terminal .titlebar {
     display: flex;
+    border-radius: 100px;
     /* width: 100%; */
     align-items: center;
     background-color: rgb(32, 32, 32);
@@ -132,6 +134,7 @@ a:hover::after {
     height: auto;
     padding: 10px;
     width: 70%;
+    border-radius: 10px;
     height: 500px !important;
     background-color: rgba(32, 32, 32, 0.226);
 }
@@ -139,10 +142,10 @@ a:hover::after {
 .flex {
     color:white;
     align-items: center;
-    gap: 20%;
+    gap: 10%;
     justify-content: space-evenly;
     display: flex;
-    justify-self:center
+    /* justify-self:center */
 }
 .terminal-text p {
     font-family: 'Courier New', Courier, monospace;

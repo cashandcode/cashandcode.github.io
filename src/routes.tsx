@@ -7,7 +7,7 @@ export function Routes() {
 			<Route path="/">
 				<div className="flex">
 					<div className="l1">
-						<span>Good websites,<br /> right in your hands.</span>
+						<span>Every click,<br /> brings a customer.</span>
 					</div>
 					<div className="l2">
 						<div className="terminal">
