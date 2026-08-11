@@ -1,14 +1,13 @@
-import { Route, Switch} from 'wouter-preact'
+import { Route, Switch, Link} from 'wouter-preact'
 // import { App } from './app';
+// import { AstroGenApp } from './ex_websites/astrogen';
+// import AstroGenApp
 export function Routes() {
   return (
 	<>
 		<Switch>
 			<Route path="/">
 				<div className="flex">
-					<div className="l1">
-						<span>Every click,<br /> brings a customer.</span>
-					</div>
 					<div className="l2">
 						<div className="terminal">
 							<div className="titlebar">npm create @cashandcode/template</div>
@@ -20,15 +19,20 @@ export function Routes() {
 							</div>
 						</div>
 					</div>
+					<div className="l1">
+						<span>Every click,<br /> brings a customer.</span>
+					</div>
 				</div>
 			</Route>
+			
 			<Route path="/websites">
 				<h1>{"Our Website Examples"}</h1>
 				<div className="webExmples">
-					<div className="web1 exampleWebsite">
+					<a href="/websites/astrogen" target="_blank" rel="noopener noreferrer" className="web1 exampleWebsite">
 						<h1 className="name">AstroGen</h1>
 						<p className="description">An API Key provider for ai models.</p>
-					</div>
+					</a>
+
 					<div className="flex">
 						<div className="web2 exampleWebsite">
 							<h1 className="name">FruityChirps</h1>
@@ -41,7 +45,6 @@ export function Routes() {
 					</div>
 				</div>
 			</Route>
-			<Route path="/contact"></Route>
 		</Switch>
 	</>
   )  
