@@ -60,7 +60,7 @@ body {
     align-items: center;
     justify-content: space-evenly;
 }
-    .flex .l1 span::before {
+.flex .l1 span::before {
     content: '';
     position: absolute;
     width: 0px;
