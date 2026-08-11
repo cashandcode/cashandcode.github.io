@@ -1,4 +1,4 @@
-import { Route, Switch, Link} from 'wouter-preact'
+import { Route, Switch } from 'wouter-preact'
 // import { App } from './app';
 // import { AstroGenApp } from './ex_websites/astrogen';
 // import AstroGenApp
